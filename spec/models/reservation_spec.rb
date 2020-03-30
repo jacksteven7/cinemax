@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Cinemax tests', type: :request do
   context 'Reservation validation test' do
     before(:all) do
-      #Create this movie to test the reservation funtinality
+      #Create this movie to test the reservation functionality
       params = {
         title: "Sherlock1",
         description: "Adventure",
@@ -22,7 +22,6 @@ describe 'Cinemax tests', type: :request do
       }
       post "/api/v1/cinemax/movie/#{@movie[:movie_id]}/reservation", params: params
       
-      expect(response.status).to eq 201
       expect(response.body).to include "Reservation created successfully"
     end
 
@@ -33,7 +32,6 @@ describe 'Cinemax tests', type: :request do
       }
       post "/api/v1/cinemax/movie/#{@movie[:movie_id]}/reservation", params: params
       
-      expect(response.status).to eq 201
       expect(response.body).to include "Reservation unsuccessfully, only 4 seats for this movie"
     end
 
@@ -44,7 +42,6 @@ describe 'Cinemax tests', type: :request do
       }
       post "/api/v1/cinemax/movie/#{@movie[:movie_id]}/reservation", params: params
       
-      expect(response.status).to eq 201
       expect(response.body).to include "Wrong reservation date, only future functions"
     end
 

@@ -29,14 +29,14 @@ module Cinemax
         reservation_day = Date::DAYNAMES[rdate.wday]
         
         if rdate < Date.today
-          { status: "401", message: "Wrong reservation date, only future functions" }
+          { message: "Wrong reservation date, only future functions" }
         elsif movie[:days].exclude? reservation_day
-          { status: "401", message: "#{movie[:title]} is not available on #{reservation_day}s" }
+          { message: "#{movie[:title]} is not available on #{reservation_day}s" }
         elsif persons + person_in_reservation > Orm::Reservation::CINEMA_LIMIT #Exceeds the limit of the cinema
-          { status: "401", message: "Reservation unsuccessfully, only #{Orm::Reservation::CINEMA_LIMIT - person_in_reservation} seats for this movie" }
+          { message: "Reservation unsuccessfully, only #{Orm::Reservation::CINEMA_LIMIT - person_in_reservation} seats for this movie" }
         else
           reservations.insert(:rdate => rdate, :persons => persons, :movie_id =>  params[:id])
-          { status: "201", message: "Reservation created successfully" }
+          { message: "Reservation created successfully" }
         end
       end    
     end

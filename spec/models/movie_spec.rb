@@ -6,7 +6,6 @@ describe 'Cinema tests', type: :request do
     it "Get movies" do
       get "/api/v1/cinemax/movies?day=Friday"
       expect(response.status).to eq 200
-      #expect(JSON.parse(response.body)).to
     end
 
     it "Create movies" do
