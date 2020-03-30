@@ -1,24 +1,22 @@
-# README
+# Cinema
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Clone the git repository `git@github.com:jacksteven7/cinemax.git`
 
-Things you may want to cover:
+* Go into the folder cinema
 
-* Ruby version
+Run this commands
 
-* System dependencies
+* bundle 
 
-* Configuration
+* rake db:create
 
-* Database creation
+* rake db:create_database
 
-* Database initialization
+* rake db:seed
 
-* How to run the test suite
+* rspec 
 
-* Services (job queues, cache servers, search engines, etc.)
+* rails s
 
-* Deployment instructions
-
-* ...
+* With this postman collection the API can be tested `https://www.getpostman.com/collections/02840963f472ffa3dda7`
+Please in POST request set the `content-type` from `text/plain` to `JSON` 
