@@ -6,17 +6,17 @@
 
 Run this commands
 
-* bundle 
+* Bundle project `bundle` 
 
-* rake db:create
+* Create database `rake db:create`
 
-* rake db:create_database
+* Create tables `rake db:create_database`
 
-* rake db:seed
+* Populate database `rake db:seed`
 
-* rspec 
+* Run tests `rspec` 
 
-* rails s
+* Run the server `rails s`
 
 * With this postman collection the API can be tested `https://www.getpostman.com/collections/02840963f472ffa3dda7`
 Please in POST request set the `content-type` from `text/plain` to `JSON` 
